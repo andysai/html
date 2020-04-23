@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>笃信</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="icon" href="images/favicon.png" type="image/gif" />
+
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+
+    <script>
+        var fasterheight = document.getElementById('box');
+        var sonheight = document.getElementById('slide');
+        fasterheight.style.height = sonheight.offsetHeight+'px';
+    </script>
+    <script src="http://code.jquery.com/jquery-1.4.1.js"></script>
+    <script>
+        window.onload = function() {
+            var fasterHeight = $('#slide').height();
+            $("#box").css({height: fasterHeight+'px'});
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                        <div class="full">
+                            <div class="center-desk">
+                                <div class="logo">
+                                    <a href="index.html" > <center><img src="images/logo.png" alt="#"/></center></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                        <div class="header_information">
+                            <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarsExample04">
+                                    <ul class="navbar-nav mr-auto" style="position: relative" >
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="index.html"> 首页  </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="product.html"> 产品中心 </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="case.html"> 成功案例 </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="service.html">服务支持</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="about.html"> 关于我们 </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="call.html"> 联系我们 </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="box" id="box">
+        <div class="inner">
+            <!--轮播图-->
+            <ul>
+                <li><a href="#"><img src="images/index1.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/index2.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/index3.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/index4.jpg" alt=""></a></li>
+                <li><a href="#"><img src="#" alt=""></a></li>
+            </ul>
+            <!--左右焦点-->
+            <div id="arr">
+                    <span id="left">
+                        <
+                    </span>
+                <span id="right">
+                        >
+                    </span>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function my$(id) {
+            return document.getElementById(id);
+        }
+
+        //获取各元素，方便操作
+        var box=my$("box");
+        var inner=box.children[0];
+        var ulObj=inner.children[0];
+        var list=ulObj.children;
+        var olObj=inner.children[1];
+        var arr=my$("arr");
+        var imgWidth=inner.offsetWidth;
+        var right=my$("right");
+        var pic=0;
+        //根据li个数，创建小按钮
+        for(var i=0;i<list.length;i++){
+            var liObj=document.createElement("li");
+
+            olObj.appendChild(liObj);
+            liObj.innerText=(i+1);
+            liObj.setAttribute("index",i);
+
+            //为按钮注册mouseover事件
+            liObj.οnmοuseοver=function () {
+                //先清除所有按钮的样式
+
+                for (var j=0;j<olObj.children.length;j++){
+                    olObj.children[j].removeAttribute("class");
+                }
+                this.className="current";
+                pic=this.getAttribute("index");
+                animate(ulObj,-pic*imgWidth);
+            }
+
+        }
+        //设置ol中第一个li有背景颜色
+        olObj.children[0].className = "current";
+        //克隆一个ul中第一个li,加入到ul中的最后=====克隆
+        ulObj.appendChild(ulObj.children[0].cloneNode(true));
+
+        var timeId=setInterval(onmouseclickHandle,1920);
+        //左右焦点实现点击切换图片功能
+        box.οnmοuseοver=function () {
+            arr.style.display="block";
+            clearInterval(timeId);
+        };
+        box.οnmοuseοut=function () {
+            arr.style.display="none";
+            timeId=setInterval(onmouseclickHandle,1920);
+        };
+
+        right.οnclick=onmouseclickHandle;
+        function onmouseclickHandle() {
+            //如果pic的值是5,恰巧是ul中li的个数-1的值,此时页面显示第六个图片,而用户会认为这是第一个图,
+            //所以,如果用户再次点击按钮,用户应该看到第二个图片
+            if (pic == list.length - 1) {
+                //如何从第6个图,跳转到第一个图
+                pic = 0;//先设置pic=0
+                ulObj.style.left = 0 + "px";//把ul的位置还原成开始的默认位置
+            }
+            pic++;//立刻设置pic加1,那么此时用户就会看到第二个图片了
+            animate(ulObj, -pic * imgWidth);//pic从0的值加1之后,pic的值是1,然后ul移动出去一个图片
+            //如果pic==5说明,此时显示第6个图(内容是第一张图片),第一个小按钮有颜色,
+            if (pic == list.length - 1) {
+                //第五个按钮颜色干掉
+                olObj.children[olObj.children.length - 1].className = "";
+                //第一个按钮颜色设置上
+                olObj.children[0].className = "current";
+            } else {
+                //干掉所有的小按钮的背景颜色
+                for (var i = 0; i < olObj.children.length; i++) {
+                    olObj.children[i].removeAttribute("class");
+                }
+                olObj.children[pic].className = "current";
+            }
+        }
+        left.οnclick=function () {
+            if (pic==0){
+                pic=list.length-1;
+                ulObj.style.left=-pic*imgWidth+"px";
+            }
+            pic--;
+            animate(ulObj,-pic*imgWidth);
+            for (var i = 0; i < olObj.children.length; i++) {
+                olObj.children[i].removeAttribute("class");
+            }
+            //当前的pic索引对应的按钮设置颜色
+            olObj.children[pic].className = "current";
+        };
+
+        //设置任意的一个元素,移动到指定的目标位置
+        function animate(element, target) {
+            clearInterval(element.timeId);
+            //定时器的id值存储到对象的一个属性中
+            element.timeId = setInterval(function () {
+                //获取元素的当前的位置,数字类型
+                var current = element.offsetLeft;
+                //每次移动的距离
+                var step = 10;
+                step = current < target ? step : -step;
+                //当前移动到位置
+                current += step;
+                if (Math.abs(current - target) > Math.abs(step)) {
+                    element.style.left = current + "px";
+                } else {
+                    //清理定时器
+                    clearInterval(element.timeId);
+                    //直接到达目标
+                    element.style.left = target + "px";
+                }
+            }, 14);
+        }
+    </script>
+<br>
+    <footer class="pageFooter">
+        <div class="footerContainer">
+            <div class="segment1">
+                <div class="shortCut">
+                    <div class="shortCutTable">
+                    </div>
+                </div>
+            </div>
+            <div class="myInfo" id="otherUrl">
+                <div class="myInfoRow">
+                    <div class="myInfoCell" style="background-color: #7f8c8d ">
+                        <div class="copyRight" style="color: black"><center>地址:东莞松山湖高新技术产业开发区科汇路1号中科院云计算中心3楼321室</center></div>
+
+                    <div class="copyRight" style="color: black"><center>
+                        <a href="http://www.miitbeian.gov.cn" style="text-decoration: underline;">粤ICP备20024197号</a>|<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44190002004616" style="text-decoration:underline;height:1rem;line-height:1rem;"><img src="images/PSB_backup.png" style="display: inline-block; vertical-align:middle; height:1.2rem;line-height:1rem;"/> <span style="height:1rem;line-height:1rem;">粤公网安备44190002004616号</span></a>
+                    </center></div>
+
+                        <div class="copyRight" style="color: black"><center>版权所有©2020 广东笃信科技有限公司, 保留一切权利。 </center></div>
+                    </div>
+                    <div class="myInfoCell" style="width:15%;height: 60px; vertical-align: top;">
+                    </div>
+                </div>
+            </div>
+                <script type="text/javascript">
+                </script>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

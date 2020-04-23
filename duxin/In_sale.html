@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>笃信</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="icon" href="images/favicon.png" type="image/gif" />
+
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!--
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">-->
+    <script type="text/javascript">
+        function funcShow(id){
+            for(var i=0;i<4;i++){
+                var divInfo =document.getElementById('div'+(i+1));
+                divInfo.style.display='none';
+            }
+            var div =document.getElementById('div'+id);
+            div.style.display='block';
+        }
+    </script>
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                    <div class="full">
+                        <div class="center-desk">
+                            <div class="logo">
+                                <a href="index.html" > <center><img src="images/logo.png" alt="#"/></center></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                    <div class="header_information">
+                        <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarsExample04">
+                                <ul class="navbar-nav mr-auto" style="position: relative">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="index.html"> 首页  </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="product.html"> 产品中心 </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="case.html"> 成功案例 </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="service.html">服务支持</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="about.html"> 关于我们 </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="call.html"> 联系我们 </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="cooperation">
+    <img src="images/banner/service.png" style="width:100%;"/>
+</div>
+
+<div>
+    <table width="100%" border="3">
+        <tr>
+            <td width="200" style="font-size:28px; font-family:华文琥珀; background-color: #7f8c8d"><a><center><span>服务支持</span></center></a></td>
+            <td width="200" colspan="4" rowspan="5">
+                <div id="div1" style="display:none"></div>
+                <div id="div2" style="display:run-in">售中</div>
+                <div id="div3" style="display:none"></div>
+                <div id="div4" style="display:none"></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size: 18px"><center><a href="Pre_sale.html">售前</a></center></td>
+        </tr>
+        <tr>
+            <td style="font-size: 18px"><center><a href="In_sale.html">售中</a></center></td>
+        </tr>
+        <tr>
+            <td style="font-size: 18px"><center><a href="Customer_service.html">售后</a></center></td>
+        </tr>
+        <tr>
+            <td style="font-size: 18px"><center><a href="Common_problem.html">常见问题</a></center></td>
+        </tr>
+    </table>
+</div>
+
+<footer class="pageFooter">
+    <div class="footerContainer">
+        <div class="segment1">
+            <div class="shortCut">
+                <div class="shortCutTable">
+                </div>
+            </div>
+        </div>
+        <div class="myInfo" id="otherUrl">
+            <div class="myInfoRow">
+                <div class="myInfoCell" style="background-color: #7f8c8d ">
+                    <div class="copyRight" style="color: black"><center>地址:东莞松山湖高新技术产业开发区科汇路1号中科院云计算中心3楼321室</center></div>
+
+                    <div class="copyRight" style="color: black"><center>
+                        <a href="http://www.miitbeian.gov.cn" style="text-decoration: underline;">粤ICP备20024197号</a>|<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44190002004616" style="text-decoration:underline;height:1rem;line-height:1rem;"><img src="images/PSB_backup.png" style="display: inline-block; vertical-align:middle; height:1.2rem;line-height:1rem;"/> <span style="height:1rem;line-height:1rem;">粤公网安备44190002004616号</span></a>
+                    </center></div>
+
+                    <div class="copyRight" style="color: black"><center>版权所有©2020 广东笃信科技有限公司, 保留一切权利。 </center></div>
+                </div>
+                <div class="myInfoCell" style="width:15%;height: 60px; vertical-align: top;">
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        </script>
+    </div>
+    </div>
+</footer>
+</body>
+</html>

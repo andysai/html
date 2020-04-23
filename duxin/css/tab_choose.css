@@ -1,0 +1,16 @@
+.line-lpu{ height:55px; position:relative; width:100%; overflow:hidden;}
+.line-lpu span{ width:43px; height:46px; background:url('https://www.efose.com/images/banners/lpu_03.png') no-repeat; position:absolute;top:0;}
+.border-lpu{border-bottom:1px  solid #959595; height:23px; }
+.join-lpu li{ width:19%; float:left; margin-right:8px;background:none; padding:0; }
+.join-lpu li a{ display:block; color:#606060; text-decoration:none; border:1px solid #959595; min-height:215px; padding:10px;position:relative; overflow:hidden;}
+.join-lpu li a:hover{border:1px solid #337ab7;}
+.join-lpu li b{ font-size:60px; position:absolute; bottom:7px; right:-1px; font-style:italic; color:#c7c7c7;}
+.clear{clear:both;}
+.step-lpu span{ background:url('https://www.efose.com/images/banners/icon-lpu.png') no-repeat; display:block; width:75px; height:65px; margin-left:28px;}
+.step-lpu .icon0{ background-position:0 0;}
+.step-lpu .icon1{ background-position:0 -70px;}
+.step-lpu .icon2{ background-position:0 -140px;}
+.step-lpu .icon3{ background-position:0 -204px; height:58px; margin-bottom:7px;}
+.step-lpu .icon4{ background-position:0 -260px;}
+.table-c table{border-right:1px solid black;border-bottom:1px solid black}
+.table-c table td{border-left:1px solid black;border-top:1px solid black}
