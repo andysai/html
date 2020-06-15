@@ -858,7 +858,12 @@ ul:hover{
      float: left;
 
 }
-
+.d1{
+     width: 320px;
+     height: 480px;
+     text-align:center;
+     border:1px;
+}
 ol {
      position: absolute;
      height: 20px;
