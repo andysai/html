@@ -71,7 +71,7 @@ h6 {
      font-weight: normal;
      line-height: normal;
      color: #111111;
-     margin: 0
+
 }
 
 h1 {
@@ -752,13 +752,14 @@ ul.cont li {
      color: #8a9397;
      font-size: 17px;
      line-height: 32px;
-     text-align: left;
+     text-align: center;
 }
 
 .copyright {
      margin-top: 90px;
      padding: 20px 0px;
      background-color: #00aeef;
+     text-align: center;
 }
 
 .copyright p {
@@ -859,10 +860,26 @@ ul:hover{
 
 }
 .d1{
-     width: 320px;
-     height: 480px;
-     text-align:center;
+     width: 50%;
+     height: 50%;
+     text-align: center;
+     margin:0 auto;
      border:1px;
+}
+.photo{
+     float:left;
+     width:20%;
+}
+.intro {
+     float: right;
+     width: 80%;
+}
+.d2{
+     width: 50%;
+     height: 50%;
+     text-align: center;
+     margin:0 auto;
+     border:2px;
 }
 ol {
      position: absolute;
