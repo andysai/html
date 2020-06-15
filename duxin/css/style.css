@@ -260,7 +260,6 @@ button {
      margin: 0 30px;
 }
 
-
 /*-- navigation--*/
 
 .navigation.navbar {
@@ -870,7 +869,14 @@ ul:hover{
 .photo{
      float:left;
      width:20%;
+     margin: 0 5px;
 }
+.photo1{
+     float:left;
+     width:50%;
+     margin: 0 5px;
+}
+
 .intro {
      float: right;
      width: 80%;
